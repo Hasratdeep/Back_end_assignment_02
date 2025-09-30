@@ -1,4 +1,4 @@
-import { employees , Employee } from "./services/employeeService";
+import { Employee, employees } from "./services/employeeService";
 
 //Get all employees
 export const getAllEmployees = (): Employee[] => {
@@ -7,26 +7,22 @@ export const getAllEmployees = (): Employee[] => {
 
 //Get employee by id 
 export const getEmployeeById = (id: number): Employee[] => {
-  return employees.find(id);
+  return Employee;
 };
 
 //create employee
 export const createEmployee = (id: number, createEmployee: any): Employee => {
-    return employees;
+    return createEmployee;
 };
 
 // update employee
-export const updatedEmployee = (id: number): Employee => {
-    return employees;
+export const updatedEmployee = (id: number, updatedEmployee: (id: number) => Employee): Employee => {
+    return updatedEmployee;
 };
 
 // delete employee
 export const deleteEmployee = (id: number, deleteEmployee: unknown): Employee => {
-    return employees;
+    return deleteEmployee;
 };
 
-export function updateEmployee(id: number, updatedData: any) {
-    throw new Error("Function not implemented.");
-}
-export { Employee };
 

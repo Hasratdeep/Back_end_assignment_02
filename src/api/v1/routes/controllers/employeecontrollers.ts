@@ -21,9 +21,8 @@ export const createEmployee = (req: Request, res: Response): void => {
 
 export const updateEmployee = (req: Request, res: Response): void => {
     const id: number = Number(req.params.id);
-    const updatedemployee: Employee = req.body;
-    employeeService.updateEmployee(id, employeeService.updatedEmployee);
-    res.status(200).json({ message: "updated employee", data: updatedemployee });
+    const updatedEmployee: Employee = req.body;
+    res.status(200).json({ message: "updated employee", data: updatedEmployee });
 };
 
 export const deleteEmployee = (req: Request, res: Response): void => {

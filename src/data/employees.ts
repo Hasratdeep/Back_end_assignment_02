@@ -326,5 +326,5 @@ export const employees: Employee[] = [
   phone: "204-555-0480",
   branchId: 4
 }
-]
+];
 

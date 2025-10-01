@@ -1,4 +1,4 @@
-import { Employee, employees } from "./services/employeeService";
+import { Employee, employees } from "../services/employeesService";
 
 //Get all employees
 export const getAllEmployees = (): Employee[] => {
@@ -25,4 +25,4 @@ export const deleteEmployee = (id: number, deleteEmployee: unknown): Employee =>
     return deleteEmployee;
 };
 
-
+export {employees}

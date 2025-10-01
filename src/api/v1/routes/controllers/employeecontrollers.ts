@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import * as employeeService from "../services/employeeService";
+import * as employeeService from "../../../services/employeeService";
 import { Employee, employees } from "../../../../data/employees";
 
 export const getAllemployees = (req: Request, res: Response): void => {

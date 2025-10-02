@@ -18,19 +18,21 @@ it("should create  new employee", async () => {
     expect(res.status).toBe(200);
     expect(res.body).toHaveProperty("id");
     expect(res.body.name).toBe("Alice Johnson");
+    expect(res.status).toHaveBeenCalledWith(200);
   });
 
   it("should fail and return 404 when required fields are missing", async () => {
     const res = await request(app).post("/api/v1/employees").send({
       name: "Alice Johnson",
     });
-    expect(response.status).toBe(400);
+    expect(response.status).toBe(404);
+    expect(res.status).toHaveBeenCalledWith(200);
   });
 
   // To return all employee//
   it("should return all employees", async () => {
     const res = await request(app).get("/api/v1/employees");
-    expect(res.status).toBe(200);
+    expect(res.status).toHaveBeenCalledWith(200);
   });
 
   //to return an employee by ID//
@@ -39,13 +41,15 @@ it("should create  new employee", async () => {
     if (res.status = 200) {
       expect(res.body).toHaveProperty("id");
     } else {
-      expect(response.status).toBe(400);
+      expect(response.status).toBe(404);
+      expect(res.status).toHaveBeenCalledWith(200);
     }
   });
 
   it("should return 404 when employee ID is missing ", async () => {
     const res = await request(app).get("/api/v1/employees/100");
     expect(response.status).toBe(404);
+    expect(res.status).toHaveBeenCalledWith(200);
   });
 
   //To update an employee//
@@ -63,6 +67,7 @@ it("should create  new employee", async () => {
       expect(res.body).toHaveProperty("position", "IT");
     } else {
       expect(response.status).toBe(404);
+      expect(res.status).toHaveBeenCalledWith(200);
     }
   });
 
@@ -79,6 +84,7 @@ it("should create  new employee", async () => {
       expect(res.body).toHaveProperty("message", "successfully deleted Employee ");
     } else {
       expect(response.status).toBe(404);
+      expect(res.status).toHaveBeenCalledWith(200);
     }
   });
 

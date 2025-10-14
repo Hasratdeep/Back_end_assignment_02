@@ -7,3 +7,5 @@ export const employeeSchema = Joi.object({
   email: Joi.string().email().required(),
   branchId: Joi.string().required(),
 });
+
+

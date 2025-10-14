@@ -8,4 +8,3 @@ const app: Express = express();
 app.use(morgan("combined"));
 
 export default app;
-

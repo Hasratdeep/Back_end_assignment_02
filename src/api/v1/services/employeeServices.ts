@@ -1,4 +1,4 @@
-import { Employee, employees } from "../../../services/employeesService";
+import { Employee, employees } from "..services/employeesService";
 
 //Get all employees
 export const getAllEmployees = (): Employee[] => {

@@ -5,13 +5,13 @@ import {
     getBranchById,
     updateBranch,
     deleteBranch,
-} from "./controllers/branchcontrollers";
+} from "..api/v1/employeecontrollers/branchcontrollers";
 const router = express.Router();
-
+ 
 router.post("/", createBranch);
 router.get("/", getAllBranches);
 router.get("/:id", getBranchById);
 router.put("/:id", updateBranch);
 router.delete("/:id", deleteBranch);
-
+ 
 export default router;

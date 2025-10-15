@@ -5,14 +5,14 @@ import {
     createEmployee,
     updateEmployee,
     deleteEmployee
-} from "./controllers/employeecontrollers";
-
+} from "../../../..src/api/v1controllers/employeecontrollers";
+ 
 const router: Router = express.Router();
-
+ 
 router.get("/", getAllemployees);
-router.post("/", getEmployeeById);
-router.put("/:id", createEmployee);
-router.delete("/:id", updateEmployee);
+router.get("/", getEmployeeById);
+router.post("/:id", createEmployee);
+router.put("/:id", updateEmployee);
 router.delete("/:id", deleteEmployee);
-
+ 
 export default router;

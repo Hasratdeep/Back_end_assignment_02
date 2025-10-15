@@ -13,10 +13,10 @@ jest.mock("../src/api/v1/controllers/branchController", () => ({
 describe("Branch API Endpoints", () => {
   it("should call createBranch controller", async () => {
     const res = await request(app).post("/api/v1/branches").send({
-      id: 1,
-      name: "Vancouver Branch",
-      address: "1300 Burrard St, Vancouver, BC, V6Z 2C7",
-      phone: "604-456-0022"
+        id: 1,
+        name: "Vancouver Branch",
+        address: "1300 Burrard St, Vancouver, BC, V6Z 2C7",
+        phone: "604-456-0022"
     });
     expect(branchController.createBranch).toHaveBeenCalled();
   });
@@ -66,5 +66,3 @@ describe("Branch API Endpoints", () => {
     expect(res.status).toBe(400);
   });
 });
-
-

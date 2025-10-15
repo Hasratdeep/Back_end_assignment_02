@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
-import * as employeeService from "../../../services/employeeService";
-import { Employee, employees } from "../../../../data/employees";
+import * as employeeService from "..services/employeeServices";
+import { Employee, employees } from "..data/employees/branches";
+import { Request, Response } from "express";
 
 export const getAllemployees = (req: Request, res: Response): void => {
     const employee: Employee[] = employeeService.getAllEmployees();
@@ -30,3 +31,24 @@ export const deleteEmployee = (req: Request, res: Response): void => {
     employeeService.deleteEmployee(id, deleteEmployee);
     res.status(200).json({ message: "deleted employee", data: deleteEmployee });
 };
+
+export function createBranch(createBranch: any) {
+  throw new Error("Function not implemented.");
+}
+
+export function getAllBranches(getAllBranches: any) {
+  throw new Error("Function not implemented.");
+}
+
+export function getBranchById(getBranchById: any) {
+  throw new Error("Function not implemented.");
+}
+
+export function updateBranch(updateBranch: any) {
+  throw new Error("Function not implemented.");
+}
+
+export function deleteBranch(deleteBranch: any) {
+  throw new Error("Function not implemented.");
+}
+

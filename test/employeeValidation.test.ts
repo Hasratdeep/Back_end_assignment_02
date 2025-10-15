@@ -18,10 +18,13 @@ describe("Employee Validation Middleware", () => {
 
   it("should call next() for valid employee data", () => {
     mockReq.body = {
-      name: "Hasrat Kaur",
-      position: "Developer",
-      email: "hasrat@example.com",
-      branchId: "B001",
+        id: 1,
+        name: "Alice Johnson",
+        position: "Branch Manager",
+        department: "Management",
+        email: "alice.johnson@pixell-river.com",
+        phone: "604-555-0148",
+        branchId: 1
     };
     const middleware = validateRequest(employeeSchema);
     middleware(mockReq as Request, mockRes as Response, mockNext);
@@ -33,9 +36,13 @@ describe("Employee Validation Middleware", () => {
 
   it("should return 400 for invalid employee data", () => {
     mockReq.body = {
-      name: "H",
-      position: "",
-      email: "invalidEmail",
+        id: 1,
+        name: "Alice Johnson",
+        position: "Branch Manager",
+        department: "Management",
+        email: "INVALID",
+        phone: "604-555-0148",
+        branchId: 1
     };
     const middleware = validateRequest(employeeSchema);
     middleware(mockReq as Request, mockRes as Response, mockNext);
@@ -50,3 +57,5 @@ describe("Employee Validation Middleware", () => {
     expect(mockNext).not.toHaveBeenCalled();
   });
 });
+
+

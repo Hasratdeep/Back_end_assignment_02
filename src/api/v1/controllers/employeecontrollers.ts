@@ -2,10 +2,6 @@ import { Request, Response } from "express";
 import * as employeeService from "..services/employeeServices";
 import { Employee, employees } from "..data/employees/branches";
 import { Request, Response } from "express";
-import { ApiResponse } from "../models/ApiResponse";
-import { ErrorResponse } from "../models/ErrorResponse";
-import { Employee } from "../models/Employee";
-
 
 export const getAllemployees = (req: Request, res: Response): void => {
     const employee: Employee[] = employeeService.getAllEmployees();
@@ -36,24 +32,23 @@ export const deleteEmployee = (req: Request, res: Response): void => {
     res.status(200).json({ message: "deleted employee", data: deleteEmployee });
 };
 
-export const createEmployee = (req: Request, res: Response) => {
-  try {
-    const employee: Employee = req.body; // validated already
+export function createBranch(createBranch: any) {
+  throw new Error("Function not implemented.");
+}
 
-    const response: ApiResponse<Employee> = {
-      success: true,
-      message: "Employee created successfully",
-      data: employee,
-    };
+export function getAllBranches(getAllBranches: any) {
+  throw new Error("Function not implemented.");
+}
 
-    res.status(201).json(response);
-  } catch (err: any) {
-    const response: ErrorResponse = {
-      success: false,
-      message: "Failed to create employee",
-      errors: [err.message],
-    };
+export function getBranchById(getBranchById: any) {
+  throw new Error("Function not implemented.");
+}
 
-    res.status(500).json(response);
-  }
-};
+export function updateBranch(updateBranch: any) {
+  throw new Error("Function not implemented.");
+}
+
+export function deleteBranch(deleteBranch: any) {
+  throw new Error("Function not implemented.");
+}
+

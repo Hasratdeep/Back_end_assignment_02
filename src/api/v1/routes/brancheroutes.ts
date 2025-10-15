@@ -5,7 +5,8 @@ import {
     getBranchById,
     updateBranch,
     deleteBranch,
-} from "..api/v1/employeecontrollers/branchcontrollers";
+} from "../../api/v1/employeecontrollers";
+
 const router = express.Router();
  
 router.post("/", createBranch);

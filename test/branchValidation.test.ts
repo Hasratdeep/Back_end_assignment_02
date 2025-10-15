@@ -18,9 +18,10 @@ describe("Branch Validation ", () => {
 
   it("should call next() for valid branch data", () => {
     mockReq.body = {
-      name: "Downtown Branch",
-      address: "123 Main Street",
-      phone: "2045551234",
+        id: 1,
+        name: "Vancouver Branch",
+        address: "1300 Burrard St, Vancouver, BC, V6Z 2C7",
+        phone: "604-456-0022"
     };
     const middleware = validateRequest(branchSchema);
     middleware(mockReq as Request, mockRes as Response, mockNext);
@@ -32,9 +33,10 @@ describe("Branch Validation ", () => {
 
   it("should return 400 for invalid branch data", () => {
     mockReq.body = {
-      name: "",
-      address: "12",
-      phone: "abcd",
+        id: 1,
+        name: "Vancouver Branch",
+        address: "1300 Burrard St, Vancouver, BC, V6Z 2C7",
+        phone: "604-456-0022"
     };
     const middleware = validateRequest(branchSchema);
     middleware(mockReq as Request, mockRes as Response, mockNext);

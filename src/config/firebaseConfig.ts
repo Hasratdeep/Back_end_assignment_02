@@ -14,3 +14,5 @@ initializeApp({
 const db: Firestore = getFirestore();
 
 export { db };
+
+
